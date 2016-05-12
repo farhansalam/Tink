@@ -1,0 +1,373 @@
+.header-container {
+	background: #686868;
+	position: relative;
+	min-height: 200px;
+	background-size: cover;
+	background-position: center center;
+	@media only screen and (min-width: $break-small) {
+		min-height: 300px;
+		
+		.header {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	@media only screen and (min-width: $break-medium) {
+		min-height: 340px;	
+	}
+	@media only screen and (min-width: $break-large) {
+		min-height: 440px;	
+	}
+	@media only screen and (min-width: $break-xlarge) {
+		min-height: 580px;	
+	}
+}
+.header {
+	width: 100%;
+	padding: 18px 0;
+	height: auto;
+	position: relative;
+	z-index: 11;
+	background: #fff;
+	@media only screen and (min-width: $break-small) {
+		padding: 30px 0;
+	}
+	.columns {
+		
+		@media only screen and (min-width: $break-small) {
+			line-height: 45px;
+		}
+	}
+	.logo {
+		text-align: left;
+		.logolink {
+			display: block;
+			margin-bottom: 20px;
+			@media only screen and (min-width: $break-small) {
+				margin: 0;	
+			}
+		}
+		.logoimg {
+			max-height: 27px;
+		}
+	}
+	.menu-holder {
+		text-align: center;
+		display: none;
+		@media only screen and (min-width: $break-large) {
+				display: block;
+		}
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;	
+			
+			li {
+				display: inline-block;
+				
+				&.menu-item-has-children {
+					position: relative;
+				}
+				a {
+					font-size: 13px;
+					
+					&.sfHover,
+					&.current-menu-item {
+						color: $color3;
+					}
+				}	
+				
+				.sub-menu {
+					display: none;
+					background: #fff;
+					padding: 18px 30px;
+					@include box-shadow(0 0 1px rgba(0,0,0,0.3));
+					text-align: left;
+					position: absolute;
+					top: 100%;
+					left: -30px;
+					min-width: 200px;
+					
+					.sub-menu { 
+						top: -10px;
+						left: 100%;
+					}
+					li {
+						display: block;
+						padding: 0;
+						margin: 0;
+						a {
+							display: block;
+							text-transform: none;
+							line-height: 30px;	
+							white-space: nowrap;
+							font-weight: 600;
+						}
+					}
+					
+				}
+			}
+			&>li {
+				padding: 10px 0;
+				margin: 0;
+				margin-right: 20px;
+				&>a {
+					text-transform: uppercase;
+					font-weight: 700;
+				}	
+				&:last-child {
+					margin-right: 0;	
+				}
+			}
+		}
+	}
+	.account-holder {
+		text-align: right;
+		
+		a {
+			display: inline-block;
+			margin: 0 7px;
+			min-height: 21px;
+			min-width: 20px;
+			text-align: center;
+			position: relative;
+			top: -1px;
+			@media only screen and (min-width: $break-small) {
+				margin: 0 0 0 15px;	
+			}
+			svg {
+				vertical-align: middle;	
+			}
+			#quick_wishlist_icon {
+				fill: transparent;
+			}
+			&>span {
+				display: inline-block;
+				background: #747474;
+				width: 20px;
+				height: 20px;
+				border-radius: 10px;
+				color: #fff;
+				line-height: 22px;
+				font-weight: 700;
+				text-align: center;
+				margin-left: 5px;
+				font-size: 10px;
+				vertical-align: middle;
+				
+				&.cart_count {
+					background: $color3;
+				}
+				
+				position: absolute;
+				top: -7px;
+				right: -12px;
+				
+				@media only screen and (min-width: $break-small) {
+					position: relative;
+					top: 1px;
+					left: 0;
+				}
+			}
+			&.mobile-toggle {
+				display: inline-block;
+				@media only screen and (min-width: $break-large) {
+					display: none;
+				}
+				.fa {
+					vertical-align: middle;
+				}
+			}
+			&:first-child {
+				@media only screen and (min-width: $break-small) {
+					margin-left: 0;	
+				}
+			}
+		}
+	}
+} 
+.header {
+	border-bottom: 1px solid rgba($color1, 0.07);
+	&.transparent {
+		
+		@media only screen and (min-width: $break-small) {
+			background: none !important;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 99;
+			border: 0;
+		}
+		.subheader + & {
+			@media only screen and (min-width: $break-medium) {
+			top: 50px;
+			}
+		}
+		&.header--light {
+			border: 0;
+		}
+	}
+	&.header--dark {
+		.logo--light {
+			display: none;
+		}
+		@media only screen and (min-width: $break-small) {
+			.logo--light {
+				display: inline-block;
+			}
+			.logo--dark {
+				display: none;
+			}
+			
+			#quick_search_icon,
+			#quick_cart_icon {
+				fill: #fff;
+			}
+			.fa {
+				color: #fff;
+			}
+			#quick_wishlist_icon path{
+				stroke: #fff;
+				fill: transparent;
+			}
+			.sf-menu > li > a {
+				color: #fff;
+				
+				&:hover {
+					color: $color3;	
+				}
+			}
+		}
+		&.fixed {
+			.logo--light {
+				display: inline-block;
+			}
+			.logo--dark {
+				display: none;
+			}
+			
+			#quick_search_icon,
+			#quick_cart_icon {
+				fill: #fff;
+			}
+			.fa {
+				color: #fff;
+			}
+			#quick_wishlist_icon path{
+				stroke: #fff;
+				fill: transparent;
+			}
+			.sf-menu > li > a {
+				color: #fff;
+				
+				&:hover {
+					color: $color3;	
+				}
+			}
+		}
+	}
+	&.header--light {
+		border-bottom: 1px solid #eee;
+		
+		.logo--light {
+			display: none;
+		}
+		.logo--dark {
+			display: inline-block;
+		}
+		#quick_search_icon,
+		#quick_cart_icon {
+			fill: $color1;
+		}
+		#quick_wishlist_icon path{
+			stroke: $color1;
+			fill: transparent;
+		}
+		.sf-menu > li > a {
+			color: $color1;
+			
+			&:hover {
+				color: $color3;	
+			}
+		}
+	}
+}
+.header {
+	&.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: $color1;
+		will-change: transform;
+		padding: 15px 0;
+		height: auto;
+		@include translateZ(0);
+		@include translateY(-100%);
+		@include transition(all .35s $transition);
+		@extend .admin-style;
+		
+		.logo {
+			display: none;
+		}
+		@media only screen and (min-width: $break-small) {
+			height: 50px;
+			
+			.logo {
+				display: block;
+			}
+		}
+		.logo .logoimg {
+			
+			max-height: 20px;
+		}
+		.columns {
+			line-height: 20px;
+		}
+		.menu-holder ul > li {
+			padding: 0;
+			
+			& > a {
+				font-size: 12px;	
+			}
+		}
+	}
+	&.header--slide {
+		@include translateY(0);
+	}
+	&.header--unslide {
+		@include translateY(-100%);
+	}
+}
+#page-title {
+	height: 140px;
+	width: 100%;
+	text-align: center;
+	@media only screen and (min-width: $break-small) {
+		height: 240px;
+		padding-top: 85px;
+	}
+	@media only screen and (min-width: $break-medium) {
+		height: 340px;	
+	}
+	@media only screen and (min-width: $break-large) {
+		height: 440px;	
+	}
+	@media only screen and (min-width: $break-xlarge) {
+		height: 580px;	
+	}
+	
+	.header.header--dark + & {
+		h1.page-title {
+			color: #fff;
+		}
+	}
+	h1.page-title {
+		line-height: 1;
+		margin: 0;
+		@media only screen and (min-width: $break-xlarge) {
+			font-size: 140px;
+		}
+	}
+}

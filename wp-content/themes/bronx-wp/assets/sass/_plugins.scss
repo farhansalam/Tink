@@ -1,0 +1,93 @@
+/*------------------------------------------------------------------
+Revolution Slider
+*/
+.tparrows  {
+	top:  50% !important;
+
+	&:before {
+		display: none;
+	}
+}
+.tparrows.default.round {
+	z-index: 99;
+	@extend .transition;
+}
+	
+.hesperiden.tparrows {
+	width: 15% !important;
+	height: 100% !important;
+	top: 0 !important;
+	bottom: 0 !important;
+	margin: 0 !important;
+	transform: none !important;
+	background: none !important;
+	@include opacity(1);
+	
+	&:before {
+		display: none !important;	
+	}
+	&.tp-leftarrow {
+		left: 0 !important;
+		cursor: url('../img/arrow-left.svg'),
+						url('../img/arrow-left.cur'), 
+						w-resize;
+						
+		.arrows-light & {
+			cursor: url('../img/arrow-left-light.svg'),
+							url('../img/arrow-left-light.cur'), 
+							w-resize;
+		}
+	}
+	&.tp-rightarrow {
+		right: 0 !important;
+		left: auto !important;
+		cursor: url('../img/arrow-right.svg'),
+						url('../img/arrow-right.cur'), 
+						e-resize;	
+						
+		.arrows-light & {
+			cursor: url('../img/arrow-right-light.svg'),
+							url('../img/arrow-right-light.cur'), 
+							e-resize;
+		}
+	}
+}
+
+.hesperiden.tp-bullets {
+	.tp-bullet {
+		width: 10px !important;
+		height: 10px !important;
+		background: none !important;
+		border: 1px solid rgba($color1, 0.6);
+		margin: 0 6px;
+		@extend .linear-quick-transition;
+		&:hover {
+			border-color: $color1;
+		}
+		&.selected {
+			border-color: $color1;
+			background: $color1 !important;
+		}
+		
+		.arrows-light & {
+			border: 1px solid rgba(255,255,255, 0.6);
+			
+			&:hover {
+				border-color: #fff;
+			}
+			&.selected {
+				border-color: #fff;
+				background: #fff !important;
+			}
+		}
+	}
+	.tp-arrows {
+		display: none !important;
+	}
+	
+	&.round {
+		.bullet {
+			border-radius: 5px;
+		}
+	}
+}

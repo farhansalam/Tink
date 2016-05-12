@@ -1,0 +1,28 @@
+.vc-license-activation-notice,
+.yith_banner,
+#icl_div .icl_cyan_box,
+.rs-update-notice-wrap,
+#option-tree-logo {
+	display: none !important;
+}
+#option-tree-header .theme_link {
+	display: block;
+	    float: left;
+	    height: 24px;
+	    line-height: 24px;
+	    padding: 3px 12px 3px 12px;
+}
+#option-tree-header .theme_link.right {
+	float: right;
+}
+.thb_menu_options {
+	float: left;
+	width: 100%;
+}
+.thb_menu_options h2 {
+	font-size: 16px;
+}
+.thb_menu_options h3 {
+	font-size: 12px;
+	text-transform: uppercase;
+}

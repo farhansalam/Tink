@@ -1,0 +1,161 @@
+#comments {
+
+	h2 {
+		text-align: center;
+		span {
+			color: $color3;	
+		}
+	}
+	.comment-notes {
+		margin-bottom: 20px;
+	}
+	
+	ol.commentlist {
+		list-style: none;
+		margin: 0 0 40px;
+		display: block;
+		
+		.comment {
+			&:before {
+				display: none;
+			}			
+			.comment-body {
+				position: relative;
+				min-height: 105px;
+				padding-left: 105px;
+				  padding-bottom: 10px;
+				margin-bottom: 35px;
+			}
+			.comment-meta {
+				line-height: 1;
+				position: absolute;
+				bottom: 5px;
+				right: 0;
+				font-size: 9px;
+				color: #767676;
+				text-transform: uppercase;
+				font-weight: 400;
+				
+				a {
+					color: #767676;
+				}
+			}
+			.vcard {
+				border: 0;
+				padding: 0;
+				margin: 10px 0;
+				.fn {
+					font-size: 20px;
+					font-weight: 600;
+					color: $color1;
+				}
+				.says {
+					text-transform: uppercase;
+					font-size: 12px;
+					font-weight: 400;
+					color: #767676;
+				}
+				.avatar {
+					width: 80px;
+					height: 80px;
+					float: left;
+					position: absolute;
+					top: 0;
+					left: 0;
+					padding: 10px;
+					background: #fbe73a;
+					border-radius: 40px;
+				}
+			}
+			
+			p {
+				font-size: 16px;
+				word-break: break-word;	
+			}
+			.reply {
+				position: absolute;
+				bottom: 0;
+				left: 105px;
+				font-size: 11px;
+				text-transform: uppercase;
+				font-weight: 600;
+				color: $color3;
+				a {
+					color: $color3;	
+				}
+				&:before {
+					content: "\f064";
+					font-family: FontAwesome;
+					margin-right: 5px;
+				}
+			}
+			&:last-child {
+				.comment-body {
+					border: 0;
+					margin: 0;
+				}	
+			}
+			.children {
+				list-style: none;
+				margin-left: 10px;
+				margin-bottom: 22px;
+				@media only screen and (min-width: $break-small) {
+					margin-left: 105px;
+				}
+				.avatar {
+					background: #d5d5d5;
+				}
+			}
+			.comment-respond {
+				margin-top: 40px;
+			}
+		}
+	}
+}
+.comment-respond {
+	position: relative;
+	padding-left: 105px;
+	&:before {
+		content: "+";
+		width: 80px;
+		height: 80px;
+		background: $color3;
+		color: #fff;
+		line-height: 80px;
+		text-align: center;
+		border-radius: 40px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 80px;
+		font-weight: 300;
+	}
+	.comment-reply-title {
+		font-size: 30px;
+		margin: 20px 0;
+		display: inline-block;
+		width: 100%;
+		
+		small a{
+			color: $color3;	
+			text-transform: uppercase;
+			font-weight: 400;
+			font-size: 14px;
+		}
+	}
+	input[type="text"],
+	textarea {
+		width: 100%;	
+	}
+	.form-submit {
+		text-align: right;
+		
+		.submit {
+			width: 100%;
+			
+			@media only screen and (min-width: $break-small) {
+				width: auto;	
+			}
+		}
+	}
+}
